@@ -4,20 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tidy Techs Website & Software Solutions</title>
-<link rel="icon" type="image/png" href="https://img.icons8.com/fluency/256/cyber-technology.png">
+  <link rel="icon" type="image/png" href="https://img.icons8.com/fluency/256/cyber-technology.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2>TIDY TECHS</h2>
+    <a href="#home" onclick="toggleSidebar()">Home</a>
+    <a href="#about" onclick="toggleSidebar()">About</a>
+    <a href="#services" onclick="toggleSidebar()">Services</a>
+    <a href="#portfolio" onclick="toggleSidebar()">Portfolio</a>
+    <a href="#contact" onclick="toggleSidebar()">Contact</a>
+  </div>
+
+  <!-- Header -->
   <header>
+    <div class="menu-btn" onclick="toggleSidebar()">☰</div>
     <h1>TIDY TECHS</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
   <section class="hero" id="home">
@@ -35,23 +40,24 @@
       technical skill to deliver impactful digital experiences that help your brand grow.
     </p>
   </section>
+
   <section class="socials">
-  <h3>Connect with us:</h3>
-  <div class="social-links">
-    <a href="https://www.instagram.com/thee_other_jayy" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="social-icon">
-      @thee_other_jayy
-    </a>
-    <a href="https://www.facebook.com/Thee.other.jayy" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon">
-      Thee other jayy
-    </a>
-    <a href="https://twitter.com/thee_other_jayy" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
-      @thee_other_jayy
-    </a>
-  </div>
-</section>
+    <h3>Connect with us:</h3>
+    <div class="social-links">
+      <a href="https://www.instagram.com/thee_other_jayy" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="social-icon">
+        @thee_other_jayy
+      </a>
+      <a href="https://www.facebook.com/Thee.other.jayy" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="social-icon">
+        Thee other jayy
+      </a>
+      <a href="https://twitter.com/thee_other_jayy" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="social-icon">
+        @thee_other_jayy
+      </a>
+    </div>
+  </section>
 
   <section class="services" id="services">
     <h2>Our Services</h2>
@@ -75,16 +81,10 @@
 
   <section class="portfolio" id="portfolio">
     <h2>Our Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Laptop workspace">
-      </div>
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Modern desktop setup">
-      </div>
-      <div class="portfolio-item">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Software development workspace">
-      </div>
+    <div class="portfolio-scroll">
+      <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Laptop workspace"></div>
+      <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Modern desktop setup"></div>
+      <div class="portfolio-item"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Software development workspace"></div>
     </div>
   </section>
 
@@ -102,9 +102,8 @@
     </div>
   </section>
 
-
   <footer>
-    <p>© 2025 Tidy Techs — All rights reserved </p>
+    <p>© 2025 Tidy Techs — All rights reserved</p>
   </footer>
 
   <div class="ai-btn" onclick="toggleChat()">🤖</div>
