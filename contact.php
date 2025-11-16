@@ -1,21 +1,18 @@
 <?php
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $message = htmlspecialchars($_POST['message']);
+header('Content-Type: application/json');
 
-    $to = "juniormtshali19@gmail.com";
-    $subject = "New Contact Request from Tidy Techs";
-    $body = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message";
-    $headers = "From: $email";
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $name = strip_tags(trim($_POST['name']));
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $phone = strip_tags(trim($_POST['phone']));
+    $message = strip_tags(trim($_POST['message']));
 
-    if(mail($to, $subject, $body, $headers)){
-        echo "Message sent successfully!";
-    } else {
-        echo "Failed to send message.";
+    if(empty($name) || empty($email) || empty($message)){
+        echo json_encode(['success'=>false, 'message'=>'Please fill in all required fields.']);
+        exit;
     }
-} else {
-    echo "Invalid request.";
-}
-?>
+
+    $to = "juniormtshali19@gmail.com"; // your email
+    $subject = "New Contact Form Message from $name";
+    $body = "Name: $name\nEmail: $email\nPhone: $phone\n\nMessage:\n$message
+
