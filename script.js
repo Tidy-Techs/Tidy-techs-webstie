@@ -19,17 +19,21 @@ window.onpopstate = function(){
   window.location.hash = "#home";
 }
 
-// Contact form submission via AJAX
+// Contact form submission via Web3Forms
 const contactForm = document.getElementById('contactForm');
 const formMsg = document.getElementById('form-msg');
 
 contactForm.addEventListener('submit', function(e){
   e.preventDefault();
+  formMsg.style.color = 'black';
   formMsg.innerHTML = "Sending...";
-  
-  const formData = new FormData(contactForm);
 
-  fetch('contact.php', {
+  const formData = new FormData(contactForm);
+  
+  // Add your Web3Forms access key
+  formData.append('access_key', 'f3dcdb82-b602-42f1-be7f-48961e9c1189');
+
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     body: formData
   })
@@ -37,11 +41,11 @@ contactForm.addEventListener('submit', function(e){
   .then(data => {
     if(data.success){
       formMsg.style.color = 'green';
-      formMsg.textContent = data.message;
+      formMsg.textContent = "Message sent successfully!";
       contactForm.reset();
     } else {
       formMsg.style.color = 'red';
-      formMsg.textContent = data.message;
+      formMsg.textContent = "Failed to send message. Try again later.";
     }
   })
   .catch(err => {
